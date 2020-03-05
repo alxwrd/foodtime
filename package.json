@@ -1,0 +1,47 @@
+{
+    "name": "foodtime",
+    "version": "0.0.1",
+    "private": true,
+    "description": "",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/alxwrd/foodtime.git"
+    },
+    "author": "Alex Ward (alxwrd@googlemail.com)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/alxwrd/foodtime/issues"
+    },
+    "scripts": {
+        "build": "rollup -c",
+        "autobuild": "rollup -c -w",
+        "dev": "run-p start:dev autobuild",
+        "start": "sirv public",
+        "start:dev": "sirv public --dev",
+        "publish": "npm run build && gh-pages -d public"
+    },
+    "homepage": "",
+    "dependencies": {
+        "winwheel": "^1.0.1",
+        "yrv": "0.0.19"
+    },
+    "devDependencies": {
+        "gh-pages": "*",
+        "tailwindcss": "*",
+        "@fullhuman/postcss-purgecss": "*",
+        "autoprefixer": "*",
+        "npm-run-all": "*",
+        "postcss": "*",
+        "postcss-import": "*",
+        "rollup": "*",
+        "rollup-plugin-commonjs": "*",
+        "rollup-plugin-livereload": "*",
+        "rollup-plugin-node-resolve": "*",
+        "rollup-plugin-postcss": "*",
+        "rollup-plugin-svelte": "*",
+        "rollup-plugin-terser": "*",
+        "sirv-cli": "*",
+        "svelte": "*",
+        "svelte-preprocess": "*"
+    }
+}
