@@ -580,6 +580,10 @@ img {
   display: none;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .flex-auto {
   flex: 1 1 auto;
 }
@@ -671,6 +675,10 @@ img {
 
 .text-6xl {
   font-size: 4rem;
+}
+
+.w-1 {
+  width: 0.25rem;
 }
 
 .w-full {
