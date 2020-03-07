@@ -17,7 +17,7 @@
     <Wheel on:message={handleMessage} />
     <div class="m-auto text-6xl">
       <p>{result}</p>
-      <div id="result" class="mx-auto w-1" />
+      <div id="result" class="mx-auto w-64" />
     </div>
   </div>
 
