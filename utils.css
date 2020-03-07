@@ -681,6 +681,10 @@ img {
   width: 0.25rem;
 }
 
+.w-64 {
+  width: 16rem;
+}
+
 .w-full {
   width: 100%;
 }
