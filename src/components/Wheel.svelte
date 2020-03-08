@@ -7,6 +7,8 @@
 
   let wheel;
 
+  let spinning = false;
+
   let click = new Audio("sounds/click.mp3");
   let tune = new Audio("sounds/Carroll_Park_Sting.mp3")
 
@@ -33,17 +35,16 @@
             type: "spinToStop",
             duration: 6,
             spins: 5,
-            callbackFinished: alertPrize,
             easing: "back.out(0.2)",
             callbackSound: playSound,
+            callbackFinished: wheelStopped
           }
         });
       });
   });
 
-  // Called when the animation as finished.
-  function alertPrize(indicatedSegment) {
-    // Do basic alert of the segment text.
+  function wheelStopped(indicatedSegment) {
+    spinning = false;
     dispatch("message", {
       text: indicatedSegment.text
     });
@@ -56,6 +57,10 @@
   }
 
   function spin() {
+    if (spinning) {
+      return;
+    }
+    spinning = true;
     tune.pause();
     tune.currentTime = 0;
     tune.play();
