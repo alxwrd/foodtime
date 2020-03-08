@@ -7,6 +7,9 @@
 
   let wheel;
 
+  let click = new Audio("sounds/click.mp3");
+  let tune = new Audio("sounds/Carroll_Park_Sting.mp3")
+
   export let width = "500";
   export let height = "500";
 
@@ -28,10 +31,11 @@
           // Define spin to stop animation.
           animation: {
             type: "spinToStop",
-            duration: 20,
-            spins: 13,
+            duration: 6,
+            spins: 5,
             callbackFinished: alertPrize,
-            easing: "back.out(0.2)"
+            easing: "back.out(0.2)",
+            callbackSound: playSound,
           }
         });
       });
@@ -46,7 +50,15 @@
     wheel.rotationAngle = 0;
   }
 
+  function playSound() {
+    let click = new Audio("sounds/click.mp3");
+    click.play();
+  }
+
   function spin() {
+    tune.pause();
+    tune.currentTime = 0;
+    tune.play();
     wheel.startAnimation();
   }
 </script>
@@ -58,7 +70,7 @@
 
   <div
     class="block relative text-2xl"
-    style="top: -50%; right: -50%; transform:translateY(70%);">
+    style="top: -50%; right: -50%; transform:translateY(90%);">
     <span>👈</span>
   </div>
 

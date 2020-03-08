@@ -15,7 +15,8 @@
 
   <div class="w-full mx-auto px-auto flex flex-wrap">
     <Wheel on:message={handleMessage} />
-    <div class="m-auto text-6xl">
+
+    <div class="m-auto text-6xl w-1/2">
       <p class="text-center">{result}</p>
       <div id="result" class="mx-auto w-1" />
       <div class="w-64" />
